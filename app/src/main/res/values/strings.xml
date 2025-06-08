@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Training app</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="welcome_text">Пожалуй, лучший фитнес трекер в ДВФУ</string>
     <string name="students_made">Созданный студентами</string>
@@ -12,4 +10,10 @@
     <string name="register">Регистрация</string>
     <string name="password">Пароль</string>
     <string name="offer_login_text">Войти</string>
+    <string name="title_activity">Активность</string>
+    <string name="title_personal">Профиль</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_my">Моя</string>
+    <string name="title_users">Пользователей</string>
 </resources>

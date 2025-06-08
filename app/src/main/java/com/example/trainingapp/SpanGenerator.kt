@@ -3,7 +3,6 @@ package com.example.trainingapp
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.os.Bundle
 import android.text.SpannableString
 import android.text.SpannedString
 import android.text.TextPaint
@@ -19,12 +18,12 @@ class SpanGenerator(val context: Context, val text: String) {
         val end: Int = start + word.length
         sps.setSpan(object : ClickableSpan() {
             override fun onClick(p0: View) {
-                Toast.makeText(context, "just word", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "just word", Toast.LENGTH_SHORT).show()
                 if (url == null)
                     return
-                val intnt = Intent(Intent.ACTION_VIEW)
-                intnt.data = Uri.parse(url)
-                startActivity(context, intnt, null)
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(url)
+                startActivity(context, intent, null)
             }
 
             override fun updateDrawState(ds: TextPaint) {
