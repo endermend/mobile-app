@@ -3,4 +3,13 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="welcome_text">Пожалуй, лучший фитнес трекер в ДВФУ</string>
+    <string name="students_made">Созданный студентами</string>
+    <string name="offer_register_text">Зарегистрироваться</string>
+    <string name="have_account_text">Уже есть аккаунт?</string>
+    <string name="textRules">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности и обработки персональных данных, а также принимаете пользовательское соглашение</string>
+    <string name="login">Вход</string>
+    <string name="register">Регистрация</string>
+    <string name="password">Пароль</string>
+    <string name="offer_login_text">Войти</string>
 </resources>
