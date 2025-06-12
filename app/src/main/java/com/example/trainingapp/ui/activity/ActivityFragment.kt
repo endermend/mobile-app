@@ -4,15 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.trainingapp.R
 import com.example.trainingapp.databinding.FragmentActivityBinding
+import com.example.trainingapp.ui.activity.models.ActivityViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 
 
 class ActivityFragment : Fragment() {
+    private val viewModel by viewModels<ActivityViewModel>()
     private val fragList =
         listOf(FragmentActivityMy.newInstance(), FragmentActivityAll.newInstance())
 

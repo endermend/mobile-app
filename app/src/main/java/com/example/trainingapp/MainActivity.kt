@@ -1,16 +1,13 @@
 package com.example.trainingapp
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.trainingapp.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,12 +22,33 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        val appBarConfiguration = AppBarConfiguration(
+        AppBarConfiguration(
             setOf(
                 R.id.navigation_activity, R.id.navigation_personal
             )
         )
-        //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
+    override fun onOptionsItemSelected(menuItem: MenuItem): Boolean {
+
+        when (menuItem.itemId) {
+            android.R.id.home -> {
+                supportFragmentManager.popBackStack()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(menuItem)
+    }
+    /*
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.details_toolbar_menu, menu)
+        menu?.iterator()?.forEach {
+            val icon = it.icon
+            icon?.setColorFilter(getColor(R.color.purple_500),PorterDuff.Mode.SRC_IN)
+            it.setIcon(icon)
+        }
+        return super.onCreateOptionsMenu(menu)
+    }
+    */
 }

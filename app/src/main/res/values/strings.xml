@@ -12,8 +12,31 @@
     <string name="offer_login_text">Войти</string>
     <string name="title_activity">Активность</string>
     <string name="title_personal">Профиль</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_my">Моя</string>
     <string name="title_users">Пользователей</string>
+    <string name="title_never">Никогда</string>
+    <string name="type_surfing">Серфинг</string>
+    <string name="type_bicycle">Велосипед</string>
+    <string name="type_jogging">Пробежка</string>
+    <string name="type_swing">Качели</string>
+    <string name="type_none">Бездельничаю 🛏</string>
+    <string name="item_activity_text_length">0.00 км</string>
+    <string name="item_activity_text_time">0 часов 0 минут</string>
+    <string name="item_activity_text_date">0 секунд назад</string>
+    <string name="item_activity_text_email">\@none</string>
+    <string name="item_activity_text_start">14:38</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    <string name="guys_riding_bicycles">Guys riding bicycles</string>
+    <string name="comment">Комментарий</string>
+    <string name="name_or_nickname">Имя или никнейм</string>
+    <string name="confirm_password">Подтвердить пароль</string>
+    <string name="gender">Пол</string>
+    <string name="male">Мужской</string>
+    <string name="female">Женский</string>
+    <string name="gender_other">Другое</string>
+    <string name="start">Старт</string>
+    <string name="delimiter">|</string>
+    <string name="finish">Финиш</string>
 </resources>
