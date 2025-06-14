@@ -48,7 +48,8 @@
         app:rippleColor="@color/purple_200"
         android:backgroundTint="@color/purple_500"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginBottom="@dimen/spacing_extra_large"
+        app:borderWidth="0dp"
+        android:layout_marginBottom="@dimen/spacing_large"
         android:src="@drawable/play_arrow_24"
         app:layout_constraintBottom_toBottomOf="@+id/vp2"
         app:layout_constraintEnd_toEndOf="parent" />

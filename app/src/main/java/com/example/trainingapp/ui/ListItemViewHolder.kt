@@ -1,4 +1,4 @@
-package com.example.trainingapp.ui.activity.holders
+package com.example.trainingapp.ui
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

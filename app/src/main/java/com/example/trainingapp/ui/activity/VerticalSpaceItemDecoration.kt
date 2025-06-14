@@ -21,6 +21,8 @@ class VerticalSpaceItemDecoration(
                 if (parent.adapter?.getItemViewType(position) == ViewTypes.GROUP.type) verticalSpaceHeightGroup
                 else verticalSpaceHeightItem
         }
-
+        if (parent.adapter != null && position == parent.adapter!!.itemCount - 1) {
+            outRect.bottom = verticalSpaceHeightGroup
+        }
     }
 }

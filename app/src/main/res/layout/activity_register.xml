@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/register"
     tools:context=".RegisterActivity">
 
 
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginTop="@dimen/spacing_normal"
         android:text="@string/gender"
         android:textColor="@color/black"
         android:textSize="24sp"
@@ -90,21 +90,18 @@
         app:layout_constraintTop_toBottomOf="@+id/textGender">
 
         <RadioButton
-            android:id="@+id/radioButton1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/male"
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/female"
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/gender_other"

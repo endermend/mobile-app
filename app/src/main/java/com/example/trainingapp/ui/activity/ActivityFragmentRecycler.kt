@@ -1,6 +1,5 @@
 package com.example.trainingapp.ui.activity
 
-import ListItemOnClickListener
 import android.view.LayoutInflater
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -19,7 +18,7 @@ abstract class ActivityFragmentRecycler : Fragment() {
     protected abstract fun updateRecyclerView(listItemsAdapter: ListItemsAdapter)
     protected fun createRecycler(view: View, inflater: LayoutInflater): ListItemsAdapter {
         val listItemsAdapter by lazy {
-            ListItemsAdapter(inflater, object : ListItemOnClickListener {
+            ListItemsAdapter(inflater, object : ListItemActivityOnClickListener {
                 override fun oniItemClick(activityUIModel: ActivityUIModel) {
                     goToDetails(activityUIModel)
                 }
@@ -27,7 +26,7 @@ abstract class ActivityFragmentRecycler : Fragment() {
         }
         val recyclerView = view.findViewById<RecyclerView>(R.id.recycle_view)
         val dividerItemDecoration = VerticalSpaceItemDecoration(
-            resources.getDimension(R.dimen.spacing_large).toInt(),
+            resources.getDimension(R.dimen.spacing_normal).toInt(),
             resources.getDimension(R.dimen.activity_vertical_margin).toInt()
         )
         recyclerView.addItemDecoration(dividerItemDecoration)

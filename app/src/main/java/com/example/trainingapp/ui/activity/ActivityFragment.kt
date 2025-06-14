@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.trainingapp.NewActivityActivity
 import com.example.trainingapp.R
-import com.example.trainingapp.WelcomeActivity
 import com.example.trainingapp.databinding.FragmentActivityBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -39,7 +39,7 @@ class ActivityFragment : Fragment() {
         binding.startActivityButton.apply{
             setColorFilter(resources.getColor(R.color.white, requireContext().theme), PorterDuff.Mode.SRC_IN)
             setOnClickListener{
-                val intent = Intent(requireContext(), WelcomeActivity::class.java)
+                val intent = Intent(requireContext(), NewActivityActivity::class.java)
                 startActivity(intent)
             }
         }

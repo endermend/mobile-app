@@ -1,26 +1,24 @@
 package com.example.trainingapp.ui.activity
 
-import ItemClickListener
-import ListItemOnClickListener
+import com.example.trainingapp.ui.activity.holders.ItemClickListener
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trainingapp.R
+import com.example.trainingapp.ui.ListItemViewHolder
 import com.example.trainingapp.ui.activity.holders.ActivityViewHolder
-import com.example.trainingapp.ui.activity.holders.ListItemViewHolder
 import com.example.trainingapp.ui.activity.holders.TitleViewHolder
 import com.example.trainingapp.ui.activity.models.ActivityUIModel
 import com.example.trainingapp.ui.activity.models.ListItemUIModel
 
 enum class ViewTypes(val type: Int) {
-    GROUP(0),
-    ACTIVITY(1)
+    GROUP(0), ACTIVITY(1)
 }
 
 class ListItemsAdapter(
     private val layoutInflater: LayoutInflater,
-    private val onClickListener: ListItemOnClickListener,
+    private val onClickListener: ListItemActivityOnClickListener,
 ) : RecyclerView.Adapter<ListItemViewHolder>() {
 
     private val dataList = mutableListOf<ListItemUIModel>()
@@ -48,6 +46,7 @@ class ListItemsAdapter(
                 val view = layoutInflater.inflate(R.layout.item_title, parent, false)
                 TitleViewHolder(view)
             }
+
             else -> throw java.lang.IllegalArgumentException("Unknown View Type requested: $viewType")
         }
     }
@@ -56,6 +55,7 @@ class ListItemsAdapter(
         return when (dataList[position]) {
             is ListItemUIModel.Title -> ViewTypes.GROUP.type
             is ListItemUIModel.Activity -> ViewTypes.ACTIVITY.type
+            else -> throw java.lang.IllegalArgumentException("Unknown Biew Type requested: ${dataList[position]}")
         }
     }
 

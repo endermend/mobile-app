@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import java.time.LocalDateTime
 
+@Suppress("PropertyName")
 data class ActivityUIModel(
     val _length: Int,
     val _time: Int,
