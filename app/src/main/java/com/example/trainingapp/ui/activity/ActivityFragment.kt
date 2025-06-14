@@ -1,19 +1,19 @@
 package com.example.trainingapp.ui.activity
 
+import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import com.example.trainingapp.R
+import com.example.trainingapp.WelcomeActivity
 import com.example.trainingapp.databinding.FragmentActivityBinding
-import com.example.trainingapp.ui.activity.models.ActivityViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 
 
 class ActivityFragment : Fragment() {
-    private val viewModel by viewModels<ActivityViewModel>()
     private val fragList =
         listOf(FragmentActivityMy.newInstance(), FragmentActivityAll.newInstance())
 
@@ -24,7 +24,7 @@ class ActivityFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
 
         _binding = FragmentActivityBinding.inflate(inflater, container, false)
@@ -33,8 +33,16 @@ class ActivityFragment : Fragment() {
 
         binding.vp2.adapter = adapter
         val fragTitleList = listOf(getString(R.string.title_my), getString(R.string.title_users))
-        TabLayoutMediator(binding.tabLayout, binding.vp2) { tab, pos -> tab.text = fragTitleList[pos]
+        TabLayoutMediator(binding.tabLayout, binding.vp2) { tab, pos ->
+            tab.text = fragTitleList[pos]
         }.attach()
+        binding.startActivityButton.apply{
+            setColorFilter(resources.getColor(R.color.white, requireContext().theme), PorterDuff.Mode.SRC_IN)
+            setOnClickListener{
+                val intent = Intent(requireContext(), WelcomeActivity::class.java)
+                startActivity(intent)
+            }
+        }
         return root
     }
 

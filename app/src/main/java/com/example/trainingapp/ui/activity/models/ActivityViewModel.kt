@@ -23,6 +23,11 @@ class ActivityViewModel : ViewModel()  {
             ),
             ListItemUIModel.Activity(
                 ActivityUIModel(
+                    10037, 34, ActivityTypes.JOGGING, LocalDateTime.now().plusDays(-12), "user_2"
+                )
+            ),
+            ListItemUIModel.Activity(
+                ActivityUIModel(
                     3017, 47, ActivityTypes.BICYCLE, LocalDateTime.now().plusDays(-13)
                 )
             ),
@@ -57,15 +62,15 @@ class ActivityViewModel : ViewModel()  {
         return recyclerList
     }
 
-    val activities: LiveData<List<ListItemUIModel.Activity>> = _activities
+    private val activities: LiveData<List<ListItemUIModel.Activity>> = _activities
 
-    val groups = listOf(
-        DateChecker("Сегодня", { it == LocalDate.now() }),
-        DateChecker("Вчера", { it.plusDays(1) == LocalDate.now() }),
-        DateChecker("На этой неделе", { it.plusWeeks(1) > LocalDate.now() }),
-        DateChecker("На прошлой неделе", { it.plusWeeks(2) > LocalDate.now() }),
-        DateChecker("В этом месяце", { it.plusMonths(1) > LocalDate.now() }),
-        DateChecker("В предыдущем месяце", { it.plusMonths(2) > LocalDate.now() }),
-        DateChecker("Ранее", { true })
+    private val groups = listOf(
+        DateChecker("Сегодня") { it == LocalDate.now() },
+        DateChecker("Вчера") { it.plusDays(1) == LocalDate.now() },
+        DateChecker("На этой неделе") { it.plusWeeks(1) > LocalDate.now() },
+        DateChecker("На прошлой неделе") { it.plusWeeks(2) > LocalDate.now() },
+        DateChecker("В этом месяце") { it.plusMonths(1) > LocalDate.now() },
+        DateChecker("В предыдущем месяце") { it.plusMonths(2) > LocalDate.now() },
+        DateChecker("Ранее") { true }
     )
 }

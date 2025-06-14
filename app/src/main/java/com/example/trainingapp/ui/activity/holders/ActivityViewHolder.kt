@@ -1,11 +1,9 @@
 package com.example.trainingapp.ui.activity.holders
 
 import ItemClickListener
-import android.text.SpannableString
 import android.view.View
 import android.widget.TextView
 import com.example.trainingapp.R
-import com.example.trainingapp.SpanGenerator
 import com.example.trainingapp.ui.activity.models.ListItemUIModel
 
 class ActivityViewHolder(
@@ -28,13 +26,7 @@ class ActivityViewHolder(
         activityTimeView.text = activityUIModel.time
         activityTypeView.text = activityUIModel.type(containerView.context)
         activityDateView.text = activityUIModel.date
-
-        val span = SpanGenerator(containerView.context, activityUIModel.email)
-        val sps = SpannableString(activityUIModel.email)
-        span.generate(
-            sps, activityUIModel.email, "https://www.youtube.com/watch?v=v-rWnobdpTM"
-        )
-        activityEmailView.text = sps
+        activityEmailView.text = activityUIModel.email
         containerView.setOnClickListener {
             onClickListener.oniItemClick(activityUIModel)
         }

@@ -8,34 +8,30 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="1dp"
         android:background="@color/white"
-        android:padding="20dp"
+        android:paddingHorizontal="@dimen/spacing_extra_large"
+        android:paddingTop="@dimen/spacing_large"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <TextView
             android:id="@+id/item_activity_email"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/purple_500"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/item_activity_text_email" />
 
         <FrameLayout
             android:id="@+id/main_info"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_small"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/spacing_large"
             app:layout_constraintHeight_min="60dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_activity_email">
 
             <TextView
@@ -59,12 +55,10 @@
 
         <FrameLayout
             android:id="@+id/time_info"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_small"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/spacing_large"
             app:layout_constraintHeight_min="60dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/main_info">
 
             <TextView
@@ -99,7 +93,7 @@
                         android:id="@+id/item_activity_start"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="@dimen/spacing_extra_small"
                         android:layout_toEndOf="@id/item_activity_start_text"
                         android:textSize="16sp"
                         tools:text="@string/item_activity_text_start" />
@@ -110,8 +104,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/start_layout"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
+                    android:paddingHorizontal="@dimen/activity_horizontal_margin"
                     android:text="@string/delimiter"
                     android:textAlignment="center"
                     android:textColor="@color/purple_500" />
@@ -135,7 +128,7 @@
                         android:id="@+id/item_activity_finish"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="@dimen/spacing_extra_small"
                         android:layout_toEndOf="@id/item_activity_finish_text"
                         android:textSize="16sp"
                         tools:text="@string/item_activity_text_start" />
@@ -148,17 +141,17 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_small"
-            android:minHeight="48dp"
+            android:layout_marginTop="@dimen/spacing_large"
+            app:boxBackgroundColor="@color/line"
             app:layout_constraintTop_toBottomOf="@id/time_info">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/item_activity_comment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:focusable="false"
-                android:inputType="textMultiLine"
-                android:scrollbars="vertical"
-                android:singleLine="false"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:paddingVertical="@dimen/spacing_small"
                 android:textColor="@color/dark_gray"
                 tools:text="Я бежал очень сильно, даже ты так не сможешь" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -169,11 +162,8 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ToolbarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="@string/type_none" />
 

@@ -17,4 +17,14 @@
         android:label="@string/title_personal"
         tools:layout="@layout/fragment_personal" />
 
+    <fragment
+        android:id="@+id/navigation_change_password"
+        android:name="com.example.trainingapp.ui.personal.PasswordChangeFragment"
+        android:label="@string/change_password"
+        tools:layout="@layout/fragment_password_change" />
+
+    <action
+        android:id="@+id/action_personal_to_password"
+        app:destination="@id/navigation_change_password" />
+
 </navigation>

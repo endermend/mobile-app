@@ -5,8 +5,8 @@
     <string name="students_made">Созданный студентами</string>
     <string name="offer_register_text">Зарегистрироваться</string>
     <string name="have_account_text">Уже есть аккаунт?</string>
-    <string name="textRules">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности и обработки персональных данных, а также принимаете пользовательское соглашение</string>
-    <string name="login">Вход</string>
+    <string name="textRules">Нажимая на кнопку, вы соглашаетесь\n с политикой конфиденциальности и обработки персональных данных, а также принимаете пользовательское соглашение</string>
+    <string name="login">Логин</string>
     <string name="register">Регистрация</string>
     <string name="password">Пароль</string>
     <string name="offer_login_text">Войти</string>
@@ -39,4 +39,12 @@
     <string name="start">Старт</string>
     <string name="delimiter">|</string>
     <string name="finish">Финиш</string>
+    <string name="save">Сохранить</string>
+    <string name="change_password">Изменить пароль</string>
+    <string name="exit_button">Выйти</string>
+    <string name="old_password">Старый пароль</string>
+    <string name="new_password">Новый пароль</string>
+    <string name="new_password_confirm">Повторите пароль</string>
+    <string name="confirm">Принять</string>
+    <string name="start_activity_button">Start activity button</string>
 </resources>
