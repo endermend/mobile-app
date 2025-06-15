@@ -12,6 +12,7 @@ data class ActivityUIModel(
     val _date: LocalDateTime,
     val _email: String = "user",
     val _comment: MutableLiveData<String>? = null,
+    val id: Int = 0,
 ) {
     private fun Double.format(digits: Int) = "%.${digits}f".format(this)
     private fun endOfHour(hour: Int) =

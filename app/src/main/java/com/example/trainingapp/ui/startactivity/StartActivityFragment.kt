@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView.NO_POSITION
 import com.example.trainingapp.R
 import com.example.trainingapp.ui.activity.models.ListItemUIModel
 import java.time.LocalDateTime
+import kotlin.random.Random
 
 class StartActivityFragment : Fragment() {
 
@@ -67,7 +68,7 @@ class StartActivityFragment : Fragment() {
         recyclerView.layoutManager = linearLayoutManager
         listItemsAdapter.setData((0..<viewModel.typeList.size).map {
             ListItemUIModel.Type(
-                viewModel.typeList[it],
+                viewModel.formattedType(requireContext(), it),
                 if (it == viewModel.typeId.value) requireContext().getColor(R.color.purple_500) else requireContext().getColor(
                     R.color.line
                 )
@@ -76,6 +77,7 @@ class StartActivityFragment : Fragment() {
 
         view.findViewById<Button>(R.id.start_activity).setOnClickListener {
             viewModel.apply {
+                length.postValue(Random.nextInt(1,2000))
                 start.postValue(LocalDateTime.now())
             }
             parentFragmentManager.beginTransaction()

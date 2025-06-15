@@ -46,7 +46,7 @@ class PersonalFragment : Fragment(), Toolbar.OnMenuItemClickListener {
         toolbar.setOnMenuItemClickListener(this)
         binding.changePassword.setOnClickListener {
             findNavController().navigate(
-                R.id.action_personal_to_password
+                R.id.action_navigation_personal_to_navigation_change_password
             )
         }
         binding.exitButton.setOnClickListener {

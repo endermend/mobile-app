@@ -16,7 +16,7 @@
     <string name="title_never">Никогда</string>
     <string name="type_surfing">Серфинг</string>
     <string name="type_bicycle">Велосипед</string>
-    <string name="type_jogging">Пробежка</string>
+    <string name="type_jogging">Бег</string>
     <string name="type_swing">Качели</string>
     <string name="type_none">Бездельничаю 🛏</string>
     <string name="item_activity_text_length">0.00 км</string>
@@ -47,4 +47,6 @@
     <string name="start_activity_button">Start activity button</string>
     <string name="lets_go">Погнали? :)</string>
     <string name="start_activity">Начать</string>
+    <string name="details">Детали</string>
+    <string name="type_walking">Шаг</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.trainingapp.ui.activity
 
-import com.example.trainingapp.ui.activity.holders.ItemClickListener
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.trainingapp.R
 import com.example.trainingapp.ui.ListItemViewHolder
 import com.example.trainingapp.ui.activity.holders.ActivityViewHolder
+import com.example.trainingapp.ui.activity.holders.ItemClickListener
 import com.example.trainingapp.ui.activity.holders.TitleViewHolder
 import com.example.trainingapp.ui.activity.models.ActivityUIModel
 import com.example.trainingapp.ui.activity.models.ListItemUIModel

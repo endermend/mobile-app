@@ -8,13 +8,24 @@
         android:id="@+id/navigation_activity"
         android:name="com.example.trainingapp.ui.activity.ActivityFragment"
         android:label="@string/title_activity"
-        tools:layout="@layout/fragment_activity" />
+        tools:layout="@layout/fragment_activity" >
+        <action
+            android:id="@+id/action_navigation_activity_to_navigation_all_details"
+            app:destination="@id/navigation_all_details" />
+        <action
+            android:id="@+id/action_navigation_activity_to_navigation_my_details"
+            app:destination="@id/navigation_my_details" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_personal"
         android:name="com.example.trainingapp.ui.personal.PersonalFragment"
         android:label="@string/title_personal"
-        tools:layout="@layout/fragment_personal" />
+        tools:layout="@layout/fragment_personal" >
+        <action
+            android:id="@+id/action_navigation_personal_to_navigation_change_password"
+            app:destination="@id/navigation_change_password" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_change_password"
@@ -22,8 +33,15 @@
         android:label="@string/change_password"
         tools:layout="@layout/fragment_password_change" />
 
-    <action
-        android:id="@+id/action_personal_to_password"
-        app:destination="@id/navigation_change_password" />
+    <fragment
+        android:id="@+id/navigation_all_details"
+        android:name="com.example.trainingapp.ui.activity.details.FragmentAllDetails"
+        android:label="@string/details"
+        tools:layout="@layout/fragment_activity_all_details" />
+    <fragment
+        android:id="@+id/navigation_my_details"
+        android:name="com.example.trainingapp.ui.activity.details.FragmentMyDetails"
+        android:label="@string/details"
+        tools:layout="@layout/fragment_activity_my_details" />
 
 </navigation>

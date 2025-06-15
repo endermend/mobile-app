@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trainingapp.R
@@ -14,9 +15,15 @@ import com.example.trainingapp.ui.activity.models.ActivityViewModel
 
 
 abstract class ActivityFragmentRecycler : Fragment() {
+    private val mActivityViewModel by viewModels<com.example.trainingapp.data.ActivityViewModel>()
     protected val viewModel by viewModels<ActivityViewModel>()
     protected abstract fun updateRecyclerView(listItemsAdapter: ListItemsAdapter)
+
+
     protected fun createRecycler(view: View, inflater: LayoutInflater): ListItemsAdapter {
+        mActivityViewModel.readAllActivities.observe(viewLifecycleOwner){
+            viewModel.updateActivities(it)
+        }
         val listItemsAdapter by lazy {
             ListItemsAdapter(inflater, object : ListItemActivityOnClickListener {
                 override fun oniItemClick(activityUIModel: ActivityUIModel) {
@@ -34,19 +41,18 @@ abstract class ActivityFragmentRecycler : Fragment() {
         val linearLayoutManager = LinearLayoutManager(requireContext())
         linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
         recyclerView.layoutManager = linearLayoutManager
-        updateRecyclerView(listItemsAdapter)
+        viewModel.activities.observe(viewLifecycleOwner){
+            updateRecyclerView(listItemsAdapter)
+        }
         return listItemsAdapter
     }
 
-    abstract fun getDetails(): Fragment
+    abstract fun detailsNavigation() : Int
 
     protected fun goToDetails(activityUIModel: ActivityUIModel) {
         val detailsModel by activityViewModels<DetailsViewModel>()
         detailsModel.activity.value = activityUIModel
-        val details = getDetails()
-        val transition = parentFragmentManager.beginTransaction()
-        transition.replace(R.id.nav_host_fragment_activity_main, details)
-        transition.addToBackStack(null)
-        transition.commit()
+        detailsModel.id.postValue(activityUIModel.id)
+        findNavController().navigate(detailsNavigation())
     }
 }
